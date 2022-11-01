@@ -1,7 +1,11 @@
 ---
-title: reserve protocol introduce
+title: Reserve protocol introduce
 date: 2022-10-28 12:10:07
 tags:
+  - hackathon
+  - reserve
+categories:
+  - hackathon
 ---
 
 ## All you need to know for writing a reserve protocol collateral plugins quick start
@@ -56,7 +60,7 @@ core plugin depends on two plugin types:
 
 ### IAsset interface
 
-![alt interface](../_images/reserve.jpg)
+![alt interface](/images/reserve.jpg)
 
 ### Accounting units
 
