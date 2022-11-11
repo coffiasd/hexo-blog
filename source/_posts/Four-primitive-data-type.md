@@ -1,10 +1,9 @@
 ---
-title: solidity的4种原始数据类型
-date: 2022-11-11 13:58:12
+title: Four primitive data type
 tags:
   - solidity
-categories:
-  - solidity
+categories: []
+date: 2022-11-11 13:58:12
 ---
 
 ## 这里我们介绍 4 种 solidity 的原始数据类型

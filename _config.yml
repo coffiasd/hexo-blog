@@ -31,7 +31,7 @@ i18n_dir: :lang
 skip_render:
 
 auto_category:
-  enable: true
+  enable: false
   depth: 1
 
 # Writing
