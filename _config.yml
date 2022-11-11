@@ -30,6 +30,10 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
+auto_category:
+  enable: true
+  depth: 1
+
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -66,7 +70,7 @@ index_generator:
   order_by: -date
 
 # Category & Tag
-default_category: hackathon
+default_category:
 category_map:
 tag_map:
 
