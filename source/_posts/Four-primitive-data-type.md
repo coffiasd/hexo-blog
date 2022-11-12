@@ -2,7 +2,8 @@
 title: Four primitive data type
 tags:
   - solidity
-categories: []
+categories:
+  - solidity
 date: 2022-11-11 13:58:12
 ---
 

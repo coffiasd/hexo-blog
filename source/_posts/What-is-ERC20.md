@@ -11,7 +11,7 @@ date: 2022-11-11 19:22:57
 
 <https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol>
 
-## storage variables in ERC20
+## ERC20 中的 state 变量
 
 ```
 mapping(address => uint256) private _balances;
@@ -23,58 +23,31 @@ string private _symbol;
 ```
 
 - \_balances:
-  store the balance of each address
+  储存每个地址的余额
 - \_allowances:
-  used inside function \_approve(),approve fixd amount token to spender address.
-  ```
-  _allowances[owner][spender] = amount
-  ```
+  在\_approve()函数中使用，授权给目标地址固定的提款额度
 - \_totalSupply(e.g.: 10000000000000000000000000000)
 - \_name(e.g.: Matic Token)
 - symbol(e.g.: MATIC)
 
+## \_appove
+
+![alt "appove"](/images/erc20-1.png)
+
 ## transfer
 
-```
-function transfer(address to, uint256 amount) public virtual override returns (bool) {
-        address owner = _msgSender();
-        _transfer(owner, to, amount);
-        return true;
-}
-```
+public 属性且可以被重写,简单的调用了共用方法获得了 msg.sender 的地址调用了下面的\_transfer 函数
+![alt "transfer"](/images/erc20-2.png)
 
 ## \_transfer
 
-内部函数需要被重写
+内部函数可以被重写
+![alt "_transfer"](/images/erc20-3.png)
 
-```
-function _transfer(
-        address from,
-        address to,
-        uint256 amount
-    ) internal virtual {
-        //校验from和to的地址都非零值
-        require(from != address(0), "ERC20: transfer from the zero address");
-        require(to != address(0), "ERC20: transfer to the zero address");
+## allowance
 
-        //virtual函数,需要被重写
-        _beforeTokenTransfer(from, to, amount);
+![alt "allowance"](/images/erc20-4.png)
 
-        //校验from的余额必须大于转账的amount
-        uint256 fromBalance = _balances[from];
-        require(fromBalance >= amount, "ERC20: transfer amount exceeds balance");
+## transferFrom
 
-        //unchecked 不需要考虑溢出
-        unchecked {
-            _balances[from] = fromBalance - amount;
-            // Overflow not possible: the sum of all balances is capped by totalSupply, and the sum is preserved by
-            // decrementing then incrementing.
-            _balances[to] += amount;
-        }
-
-        emit Transfer(from, to, amount);
-
-        //virtual函数,需要被重写
-        _afterTokenTransfer(from, to, amount);
-    }
-```
+![alt "transferFrom"](/images/erc20-5.png)
