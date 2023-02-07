@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Ayden blog web3
+title: Ayden web3 blog
 subtitle: "about hackathon、react.js、soldity"
 description: ""
 keywords: "hackathon,react.js,soldiity"
@@ -13,8 +13,8 @@ timezone: "UTC"
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://hexo-blog-roan.vercel.app/
-permalink: :year/:month/:day/:title/
+url: https://blog.coffiasd.cn/
+permalink: :title.html
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -107,3 +107,5 @@ theme: Chic2
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ""
+
+sitemap: path:sitemap.xml
