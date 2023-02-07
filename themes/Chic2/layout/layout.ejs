@@ -3,6 +3,20 @@
   <head>
     <%- partial('_partial/head',{cache: true}) %>
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-VHJH88R504"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-VHJH88R504");
+  </script>
 
   <body>
     <script>
@@ -22,21 +36,6 @@
           document.getElementById("mobile-toggle-theme").innerText = "· Light";
         }
       })();
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-VHJH88R504"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-VHJH88R504");
     </script>
 
     <div class="wrapper">
