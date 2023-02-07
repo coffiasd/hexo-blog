@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="<%= config.language %>">
-
-<head>
+  <head>
     <%- partial('_partial/head',{cache: true}) %>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        // this function is used to check current theme before page loaded.
-        (() => {
-            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
-            const isDark = currentTheme === 'dark';
-            const pagebody = document.getElementsByTagName('body')[0]
-            if (isDark) {
-                pagebody.classList.add('dark-theme');
-                // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
-            } else {
-                pagebody.classList.remove('dark-theme');
-                // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Light"
-            }
-        })();
+      // this function is used to check current theme before page loaded.
+      (() => {
+        const currentTheme =
+          (window.localStorage && window.localStorage.getItem("theme")) || "";
+        const isDark = currentTheme === "dark";
+        const pagebody = document.getElementsByTagName("body")[0];
+        if (isDark) {
+          pagebody.classList.add("dark-theme");
+          // mobile
+          document.getElementById("mobile-toggle-theme").innerText = "· Dark";
+        } else {
+          pagebody.classList.remove("dark-theme");
+          // mobile
+          document.getElementById("mobile-toggle-theme").innerText = "· Light";
+        }
+      })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VHJH88R504"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VHJH88R504");
     </script>
 
     <div class="wrapper">
-        <%- partial('_partial/header',{cache: true}) %>
-            <div class="main">
-                <%- body %>
-            </div>
-            <%- partial('_partial/footer',{cache: true}) %>
+      <%- partial('_partial/header',{cache: true}) %>
+      <div class="main"><%- body %></div>
+      <%- partial('_partial/footer',{cache: true}) %>
     </div>
-</body>
-
+  </body>
 </html>
