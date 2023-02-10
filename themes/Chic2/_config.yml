@@ -1,5 +1,5 @@
 # Header
-navname: Ayden's Blog
+navname: Ayden web3 Blog
 
 # navigatior items
 nav:
@@ -15,7 +15,7 @@ favicon: /favicon.ico
 nickname: ayden lee
 
 ### this variable is MarkDown form.
-description: full stack web3 dev.
+description: 贫穷的码农
 avatar: /image/avatar.png
 
 # main menu navigation
@@ -36,16 +36,16 @@ links:
   # ZhiHu: https://www.zhihu.com/people/sirice
   # LinkedIn:
   # FaceBook:
-  # Twitter:
+  Twitter: https://twitter.com/coffiasse
   # Skype:
   # CodeSandBox:
   # CodePen:
   # Sketch:
   # Gitlab:
   # Dribbble:
-  Instagram:
-  Reddit:
-  # YouTube:
+  # Instagram:
+  # Reddit:
+  YouTube: https://www.youtube.com/channel/UCqrS4kOJuUor52EYROcfXuw
   # QQ:
   # Weibo:
   # WeChat:
