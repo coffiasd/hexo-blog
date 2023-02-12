@@ -15,7 +15,7 @@ favicon: /favicon.ico
 nickname: ayden lee
 
 ### this variable is MarkDown form.
-description: 贫穷的码农
+description: bounty hunter && contract audit && trading bot
 avatar: /image/avatar.png
 
 # main menu navigation
@@ -24,10 +24,10 @@ avatar: /image/avatar.png
 ## Unused key can be commented out.
 links:
   Blog: /archives
-  # Category:
-  # Tags:
+  Category: /category
+  Tags: /tag
   # Link:
-  Resume: http://portfolio.coffiasd.cn
+  # Resume: http://portfolio.coffiasd.cn
   # Publish:
   # Trophy:
   # Gallery:
