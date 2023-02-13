@@ -103,3 +103,8 @@ mathjax:
   import: global # global or demand
   ## global: all pages will load mathjax,this will degrade performance and some grammers may be parsed wrong.
   ## demand: Recommend option,if your post need fomula, you can declare 'mathjax: true' in Front-matter
+
+twitterpic:
+  enable: false #false使用summary卡片，true使用large_image卡片
+  src: https://bangdream.moe/img/ident.png #指定large_image使用头图地址
+  creatorid: coffiasse #你的twitter用户名
