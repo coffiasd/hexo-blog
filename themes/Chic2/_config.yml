@@ -105,6 +105,6 @@ mathjax:
   ## demand: Recommend option,if your post need fomula, you can declare 'mathjax: true' in Front-matter
 
 twitterpic:
-  enable: false #false使用summary卡片，true使用large_image卡片
-  src: https://bangdream.moe/img/ident.png #指定large_image使用头图地址
+  enable: true #false使用summary卡片，true使用large_image卡片
+  src: https://blog.coffiasd.cn/image/avatar.png
   creatorid: coffiasse #你的twitter用户名
