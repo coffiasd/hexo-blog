@@ -12,7 +12,7 @@ categories:
 
 ### 无常损失
 
-当你成了一个 AMM 的 LP(流动性提供者)的时候，那你的收益部分就来一字无常损失。
+当你成了一个 AMM 的 LP(流动性提供者)的时候，那你的收益部分就来自于无常损失。
 同时无常损失也不是永久性的，价格经过短暂的下跌之后又重新恢复。为什么会在短时间内恢复呢？正式通过一个个搬砖的人监控不同池子中的价格差价进行套利操作后使得不同池子中的价格达到一个平衡。无常损失的核心公式:
 
 $$
@@ -24,7 +24,9 @@ $$
 
 $$
 K = (A+amountIn)(B-amountOut)
+$$
 
+$$
 amountOut = B - K/(A+amountIn)
 $$
 
@@ -32,7 +34,7 @@ $$
 
 下面我们拿一个 pancakeswap 的池子来实际算一下这个 amountOut(我们预估能得到的金额)。
 为了测试方便我们拿了 bsc 测试网的池子，包含了 BUSD(0xab1a4d4f1d656d2450692d237fdd6c7f9146e814)和 WBNB(0xae13d989dac2f0debff460ac112a837c89baa7cd)两种货币。
-<https://testnet.bscscan.com/address/0x58C6Fc654b3deE6839b65136f61cB9120d96BCc6>
+[pool address](https://testnet.bscscan.com/address/0xa96818CA65B57bEc2155Ba5c81a70151f63300CD)
 通过 contract 的 ABI 可以看到相关的几个参数:
 
 - kLast
@@ -52,7 +54,7 @@ import json
 
 # init w3 provider
 # w3 = Web3(Web3.HTTPProvider("https://bsc-dataseed.binance.org"))
-w3 = Web3(Web3.HTTPProvider("https://data-seed-prebsc-1-s1.binance.org:8545"))
+w3 = Web3(Web3.HTTPProvider(TESTNET_PROVIDER_ADDRESS_HERE))
 
 
 def fetchPool(poolAddress):
@@ -81,4 +83,4 @@ print(price1/10**18)
 ```
 
 ![alt "ABI"](/images/pancakeswap-read2.png)
-实际预估的价格和计算的价格是对的上的。
+对于 pancakeswap 而言我们最终的输入价格 amountIn 要减掉一个 fee,pancakeswap UI 上预估的价格和计算的价格是对的上的。
