@@ -14,22 +14,12 @@
 <meta name="keywords" content="<%- config.keywords %>" />
 <% } %>
 
-
-<% if(theme.twitterpic.enable){ %><meta name="twitter:image:src" content="<%- url_for(theme.twitterpic.src) %>"/><%}%>
-<% if(theme.twitterpic.enable){ %><meta name="twitter:creator" content="@<%=theme.twitterpic.creatorid%>"/><%}%>
-<% if(theme.twitterpic.enable){ %><meta name="twitter:card" content="summary_large_image"/><%} else {%><meta name="twitter:card" content="summary"/><%}%>
-<meta name="twitter:title" content="<%= config.title %>"/>
-<% if (config.description) { %><meta name="twitter:description" content="<%= config.description %>"/><%}%>
-<% if(theme.twitterpic.enable){ %><meta property="og:image" content="<%- url_for(theme.twitterpic.src) %>"/><%}%>
-<% if (config.description && theme.twitterpic.enable) { %><meta property="og:image:alt" content="<%= config.description %>"/><% } %>
-<% if(theme.twitterpic.enable){ %><meta property="og:image:width" content="1200"/><% } %>
-<% if(theme.twitterpic.enable){ %><meta property="og:image:height" content="600"/><% } %>
-<meta property="og:site_name" content="<%= config.title %>"/>
-<meta property="og:type" content="object"/>
-<meta property="og:title" content="<%= config.title %>"/>
-<% if (config.description) { %><meta property="og:description" content="<%= config.description %>"/><%}%>
-
-
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="https://blog.coffiasd.cn" />
+<meta name="twitter:creator" content="@coffiasse">
+<meta name="twitter:title" content="<%- config.subtitle %> | <%config.title%>" />
+<meta name="twitter:description" content="<%- config.keywords %>" />
+<meta name="twitter:image" content="/image/avatar.png" />
 
 <% var title = page.title; if (is_archive()){ title = __('archive_a'); if
 (is_month()){ title += ': ' + page.year + '/' + page.month; } else if
