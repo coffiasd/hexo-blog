@@ -17,9 +17,12 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="https://blog.coffiasd.cn" />
 <meta name="twitter:creator" content="@coffiasse">
-<meta name="twitter:title" content="<%- config.subtitle %> | <%config.title%>" />
+<meta name="twitter:title" content="<%- page.title %> | <%- config.subtitle%>" />
 <meta name="twitter:description" content="<%- config.keywords %>" />
-<meta name="twitter:image" content="https://blog.coffiasd.cn/image/avatar.png" />
+
+<% if(page.thumbnail){ %>
+<meta name="twitter:image" content="<%- config.url %><%- page.thumbnail %>" />
+<% } %>
 
 <% var title = page.title; if (is_archive()){ title = __('archive_a'); if
 (is_month()){ title += ': ' + page.year + '/' + page.month; } else if

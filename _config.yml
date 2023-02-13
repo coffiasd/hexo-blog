@@ -4,9 +4,9 @@
 
 # Site
 title: Ayden web3 blog
-subtitle: "about defi、hackathon、react、soldity"
-description: "discover best-in-class developer tools for web3 and blockchain applications"
-keywords: "hackathon,react.js,soldiity"
+subtitle: "关于defi、hackathon、audit、react"
+description: "记录web3职业生涯内容"
+keywords: "hackathon,react,solidity,audit"
 author: ayden lee
 language: en
 timezone: "UTC"

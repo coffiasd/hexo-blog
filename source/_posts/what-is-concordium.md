@@ -6,6 +6,7 @@ tags:
   - concordium
 categories:
   - hackathon
+thumbnail: /images/thumbs/concordium.png
 ---
 
 ## concordium
