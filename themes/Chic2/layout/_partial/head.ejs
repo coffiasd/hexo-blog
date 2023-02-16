@@ -13,19 +13,20 @@
 <% } %> <% if(config.keywords){ %>
 <meta name="keywords" content="<%- config.keywords %>" />
 <% } %>
-
+<meta name="baidu-site-verification" content="codeva-8A15A5K2sE" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="https://blog.coffiasd.cn" />
-<meta name="twitter:creator" content="@coffiasse">
-<meta name="twitter:title" content="<%- page.title %> | <%- config.subtitle%>" />
+<meta name="twitter:creator" content="@coffiasse" />
+<meta
+  name="twitter:title"
+  content="<%- page.title %> | <%- config.subtitle%>"
+/>
 <meta name="twitter:description" content="<%- config.keywords %>" />
 
 <% if(page.thumbnail){ %>
 <meta name="twitter:image" content="<%- config.url %><%- page.thumbnail %>" />
-<% } %>
-
-<% var title = page.title; if (is_archive()){ title = __('archive_a'); if
-(is_month()){ title += ': ' + page.year + '/' + page.month; } else if
+<% } %> <% var title = page.title; if (is_archive()){ title = __('archive_a');
+if (is_month()){ title += ': ' + page.year + '/' + page.month; } else if
 (is_year()){ title += ': ' + page.year; } } else if (is_category()){ title =
 __('category') + ': ' + page.category; } else if (is_tag()){ title = __('tag') +
 ': ' + page.tag; } %>
