@@ -13,7 +13,7 @@ categories:
 
 ## overview
 
-In this article i gonna show you how to make a swap using pancakeswap smart router in solidity contract.Here wo go.In this example i swap BUSD token to CAKE.Here is the address of each token:
+In this article i gonna show you how to make a swap using pancakeswap smart router in solidity contract.Here wo go. In this example i swap BUSD token to CAKE.Here is the address of each token:
 
 - BUSD : <https://testnet.bscscan.com/address/0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7>
 - CAKE : <https://testnet.bscscan.com/address/0xfa60d973f7642b748046464e165a65b7323b0dee>
@@ -21,7 +21,7 @@ In this article i gonna show you how to make a swap using pancakeswap smart rout
 
 ## soldity
 
-Let's go dive into the deep.Firstly we need set a swap amount, eg:0.01 BUSD, an wed need a min out amount as well.The last parameter is path which means the path of swap tokens.When we swap busd to cake we can find a pool consist of busd and cake。So the path is simple.For some other tokens maybe the path is a litte bit longer.We have to use two or three or more pools to get the token we want.In the pancakeswap front-end page , it returns a path before we make the swap.In the solidity code we have to do it ourself.We have to get the optimal path before we make the swap.Let's dive into the pancakeswap smart router code.
+Let's go dive into the deep.Firstly we need set a swap amount, eg:0.01 BUSD, an wed need a min out amount as well.The last parameter is path which means the path of swap tokens.When we swap busd to cake we can find a pool consist of busd and cake。So the path is simple.For some other tokens maybe the path is a litte bit longer.We have to use two or three or more pools to get the token we want. In the pancakeswap front-end page , it returns a path before we make the swap. In the solidity code we have to do it ourself.We have to get the optimal path before we make the swap.Let's dive into the pancakeswap smart router code.
 
 ```javascript
 interface PancakeRouter {
@@ -31,7 +31,7 @@ interface PancakeRouter {
 }
 ```
 
-There are so many swap function we can use to help use swap tokens.In this demo we use **swapExactTokensForTokens** . As you see there is a function named **swapExactTokensForTokensSupportingFeeOnTransferTokens**. We need to know what's the difference between this two functions.
+There are so many swap function we can use to help use swap tokens. In this demo we use _swapExactTokensForTokens_. As you see there is a function named **swapExactTokensForTokensSupportingFeeOnTransferTokens**. We need to know what's the difference between this two functions.
 
 ```javascript
 function swapExactTokensForTokensSupportingFeeOnTransferTokens(
@@ -82,7 +82,7 @@ function swapExactTokensForTokensSupportingFeeOnTransferTokens(
     }
 ```
 
-After compare the above two functions we know the difference.In the **swapExactTokensForTokens** function the exact transfer amount is set by PancakeLibrary getAmountsOut. And in this article we use **swapExactTokensForTokensSupportingFeeOnTransferTokens**.
+After compare the above two functions we know the difference. In the _swapExactTokensForTokens_ function the exact transfer amount is set by PancakeLibrary getAmountsOut. And in this article we use _swapExactTokensForTokensSupportingFeeOnTransferTokens_.
 Here is the entire code from github gist : [code](https://gist.github.com/coffiasd/825ac5ba1b1bafdc0ea799b7ba35d4a5)
 
 ## deploy our code
