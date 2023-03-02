@@ -235,9 +235,3 @@ contract PuppetAttack {
     receive() external payable{}
 }
 ```
-
-## Challenge9
-
-```javascript
-
-```
