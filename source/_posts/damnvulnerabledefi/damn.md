@@ -204,7 +204,7 @@ The cost amount for lending is pegging with uniswap pool:
 
 > uniswapPair.balance \* (10 \*\* 18) / token.balanceOf(uniswapPair)
 
-Therefore,we use swap all our DVT token to ETH,and then the number of uniswapPair.balance/token.balanceOf(uniswapPair) goes down.After that happened we can deposit our eth to borrow all the DVT token in lending pool.
+Therefore, we use swap all our DVT token to ETH and then the number of **uniswapPair.balance/token.balanceOf(uniswapPair)** goes down.After that happened we can deposit our eth to borrow all the DVT token in lending pool.
 
 ```javascript
 contract PuppetAttack {

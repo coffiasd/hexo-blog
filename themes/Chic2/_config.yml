@@ -1,5 +1,5 @@
 # Header
-navname: Ayden web3 Blog
+navname: ayden blog
 
 # navigatior items
 nav:
@@ -15,7 +15,7 @@ favicon: /favicon.ico
 nickname: ayden lee
 
 ### this variable is MarkDown form.
-description: bounty hunter && contract audit && trading bot
+description: bounty hunter && contract auditor
 avatar: /image/avatar.png
 
 # main menu navigation
@@ -68,9 +68,9 @@ post_copyright_enable: true
 post_copyright_author_enable: true
 post_copyright_permalink_enable: true
 post_copyright_license_enable: true
-post_copyright_license_text: Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE
+post_copyright_license_text: Copyright (c) 2023 MIT LICENSE
 post_copyright_slogan_enable: true
-post_copyright_slogan_text: Talk is cheap , show me your code
+post_copyright_slogan_text: Talk is cheap , Show me the code
 ## toc
 post_toc_enable: true
 
