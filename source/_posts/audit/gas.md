@@ -111,6 +111,20 @@ categories:
 
 </details>
 
+<details>
+  <summary>Change for loop behavior by removing add (+1) and ++x is more gas efficient</summary>
+  ```javascript
+    function buy(uint256 _amount) external payable {
+            ...
+    -       for (uint48 x = sale_.currentId + 1; x <= newId; x++) {
+    +       for (uint48 x = sale_.currentId; x < newId; ++x) {
+                nft.mint(msg.sender, x);
+            }
+            ...
+    }
+  ```
+</details>
+
 - Multiple access to mapping/array should use local variable cache
 - Duplicated require should be modifier or function
 - Use custom error rather than revert()/require()
@@ -120,3 +134,5 @@ categories:
 - Using UniswapV3 mulDiv function is gas-optimized
 - Use nested if and, avoid multiple check combinations
 - Avoid using state variable in emit (130 gas)
+- Instead of cache a whole object ,try cache single Attributes
+- Using int32 for time
