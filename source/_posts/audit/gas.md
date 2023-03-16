@@ -136,3 +136,13 @@ categories:
 - Avoid using state variable in emit (130 gas)
 - Instead of cache a whole object ,try cache single Attributes
 - Using int32 for time
+- Don't use \_msgSender() if not supporting EIP-2771
+- Using > 0 costs more gas than != 0 when used on a uint in a require() statement(version>0.8.13)
+- Using bools for storage incurs overhead
+- <array>.length should not be looked up in every loop of a for-loop
+- Using calldata instead of memory for read-only arguments in external functions saves gas
+- Splitting require() statements that use && saves gas
+- Use a more recent version of solidity
+- require()/revert() strings longer than 32 bytes cost extra gas
+- <x> += <y> costs more gas than <x> = <x> + <y> for state variables
+- Using storage instead of memory for structs/arrays saves gas
