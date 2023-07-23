@@ -102,7 +102,7 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 ##theme: Chic2
-theme: alpha-dust
+theme: alpha-dust-2
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
