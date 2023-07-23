@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Ayden web3 blog
+title: Web3 Security Researcher Enhancing the Security of DeFi".
 subtitle: "about web3、defi、hackathon、audit、react"
-description: "record web3 content"
+description: "We offer auditing services to analyze audit reports and assist Web3 in becoming a more secure space"
 keywords: "web3,hackathon,react,solidity,audit"
 author: ayden lee
 language: en
@@ -101,7 +101,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Chic2
+##theme: Chic2
+theme: alpha-dust
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -109,3 +110,4 @@ deploy:
   type: ""
 
 sitemap: path:sitemap.xml
+
