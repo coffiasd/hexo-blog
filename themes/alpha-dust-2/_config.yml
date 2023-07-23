@@ -1,0 +1,36 @@
+# Logo (Font Awesome Class)
+fa_logo: fa-cube
+
+# Header
+menu:
+  Home: /
+  Archives: /archives
+  Tags: /tags
+  Categories: /categories
+
+# Default post title
+default_post_title: Untitled
+
+# Archive Date Format
+archive_date_format: MMM YYYY
+
+# Comments.
+comments:
+  # Disqus comments
+  disqus_shortname:
+
+# Google Analytics Tracking ID
+google_analytics: G-VHJH88R504
+
+# Social Accounts
+twitter_url: https://twitter.com/coffiasse
+github_url: https://github.com/coffiasd
+email_url: coiiasd88@gmail.com
+rss_url: \#
+
+# Footer About Text
+footer_about: "Create Websites. Make Magic."
+
+# Footer Copyright Line
+footer_copyright: "@coffiasse. All right reserved | Design & Hexo"
+
