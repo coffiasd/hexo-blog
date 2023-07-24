@@ -110,4 +110,4 @@ deploy:
   type: ""
 
 sitemap: path:sitemap.xml
-
+favicon: favicon.ico
