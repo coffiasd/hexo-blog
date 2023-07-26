@@ -7,7 +7,7 @@ logo: /images/avatar.png
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: favicon.ico
+    favicon: /images/favicon.ico
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
