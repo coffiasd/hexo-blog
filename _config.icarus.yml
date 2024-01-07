@@ -118,7 +118,7 @@ navbar:
 # Page footer configurations
 footer:
     # Copyright text
-    copyright: © 2023
+    copyright: © 2024
     # Links to be shown on the right of the footer section
     links:
         Download on GitHub:
@@ -183,7 +183,7 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: Ayden
+        author: 0x9527
         # Author title
         author_title: dev
         # Author's current location
@@ -225,7 +225,7 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            Blog: https://blog.coffiasd.cn
+            Blog: https://hexo-blog-roan.vercel.app/
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar

@@ -4,10 +4,10 @@ description: >-
   We offer auditing services to analyze audit reports and assist Web3 in
   becoming a more secure space
 keywords: web3,hackathon,react,solidity,audit
-author: ayden lee
+author: 0x9527
 language: en
 timezone: UTC
-url: https://blog.coffiasd.cn/
+url: https://hexo-blog-roan.vercel.app/
 permalink: ':title.html'
 permalink_defaults: null
 pretty_urls:
