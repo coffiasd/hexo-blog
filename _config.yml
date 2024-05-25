@@ -67,7 +67,7 @@ ignore: null
 theme: icarus
 deploy:
   type: ''
-sitemap: path:sitemap.xml
+sitemap: path:sitemap.txt
 favicon: favicon.ico
 widgets:
   - type: profile

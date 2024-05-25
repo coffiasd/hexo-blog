@@ -106,5 +106,5 @@ mathjax:
 
 twitterpic:
   enable: true #false使用summary卡片，true使用large_image卡片
-  src: https://blog.coffiasd.cn/image/avatar.png
+  src: https://www.coffiasd.xyz/image/avatar.png
   creatorid: coffiasse #你的twitter用户名
