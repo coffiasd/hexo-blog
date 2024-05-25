@@ -74,6 +74,3 @@ widgets:
     position: left
   - type: recent_posts
     position: right
-googleAnalytics:
-  enable: true
-  id: G-S26D3YDNVX
