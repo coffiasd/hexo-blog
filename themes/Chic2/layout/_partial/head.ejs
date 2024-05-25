@@ -23,6 +23,18 @@
 />
 <meta name="twitter:description" content="<%- config.keywords %>" />
 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S26D3YDNVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S26D3YDNVX');
+</script>
+
+
 <% if(page.thumbnail){ %>
 <meta name="twitter:image" content="<%- config.url %><%- page.thumbnail %>" />
 <% } %> <% var title = page.title; if (is_archive()){ title = __('archive_a');
