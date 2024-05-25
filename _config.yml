@@ -4,10 +4,10 @@ description: >-
   We offer auditing services to analyze audit reports and assist Web3 in
   becoming a more secure space
 keywords: web3,hackathon,react,solidity,audit
-author: 0x9527
+author: cofffiasd
 language: en
 timezone: UTC
-url: https://hexo-blog-roan.vercel.app/
+url: https://www.coffiasd.xyz/
 permalink: ':title.html'
 permalink_defaults: null
 pretty_urls:
