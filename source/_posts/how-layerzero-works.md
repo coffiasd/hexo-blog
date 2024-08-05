@@ -59,7 +59,7 @@ LayerZero provides robust Message Execution Options, which allow you to specify 
 estimate of how much gas a message will cost to be sent and received
 
 ## Integration Checklist
-
+<https://docs.layerzero.network/v2/developers/evm/troubleshooting/integration-checklist>
 
 ## resources
 <https://docs.layerzero.network/v2/developers/evm/overview>
