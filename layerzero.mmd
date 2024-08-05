@@ -1,0 +1,19 @@
+sequenceDiagram
+    actor senderOapp
+    participant local lz ENDPOINT
+    participant local messageLib
+    participant Security Stack (DVNs)
+    participant executor
+    participant target messageLib
+    participant target lz ENDPOINT
+    actor receiverOapp
+    autonumber
+    senderOapp ->>local lz ENDPOINT:_lzsend() message
+    local lz ENDPOINT->>local messageLib:genrate Message Packet
+    local messageLib-->>local lz ENDPOINT:return Message Packet
+    local lz ENDPOINT->>local lz ENDPOINT:emit Message Packet
+    local lz ENDPOINT->>Security Stack (DVNs):verify message
+    Security Stack (DVNs)->>target lz ENDPOINT:send message
+    target lz ENDPOINT->>target messageLib:verify
+    executor->>target lz ENDPOINT:_lzReceive
+    target lz ENDPOINT->>receiverOapp:execue message
